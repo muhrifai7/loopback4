@@ -1,0 +1,12 @@
+{
+  "ids": {
+    "Profile": 4
+  },
+  "models": {
+    "Profile": {
+      "test@gmail.com": "{\"email\":\"test@gmail.com\",\"password\":\"12345678\",\"permissions\":[\"ViewOwnUser\",\"CreateUser\",\"UpdateOwnUser\",\"DeleteOwnUser\"],\"name\":\"string\"}",
+      "hallo@gmail.com": "{\"email\":\"hallo@gmail.com\",\"password\":\"12345678\",\"permissions\":[\"ViewOwnUser\",\"CreateUser\",\"UpdateOwnUser\",\"DeleteOwnUser\"],\"name\":\"string\"}",
+      "user@example.com": "{\"email\":\"user@example.com\",\"password\":\"12345678\",\"permissions\":[\"ViewOwnUser\",\"CreateUser\",\"UpdateOwnUser\",\"DeleteOwnUser\"],\"name\":\"string\"}"
+    }
+  }
+}
