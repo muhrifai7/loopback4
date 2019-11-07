@@ -31,6 +31,8 @@ import {authenticate, AuthenticationBindings} from '@loopback/authentication';
 import {HttpErrors} from '@loopback/rest';
 import {Profile} from '../models';
 import {ProfileRepository} from '../repositories';
+import {PasswordHasherBindings} from '../authorization';
+import {PasswordHasher} from '../authorization/services/hash.password.bcryptjs';
 
 export class ProfileController {
   constructor(
@@ -40,6 +42,9 @@ export class ProfileController {
     public jwtService: JWTService,
     @inject.getter(AuthenticationBindings.CURRENT_USER)
     public getCurrentUser: Getter<MyUserProfile>,
+    //add password
+    @inject(PasswordHasherBindings.PASSWORD_HASHER)
+    private passwordHasher: PasswordHasher,
   ) {}
 
   @post('/profile', {
@@ -53,6 +58,8 @@ export class ProfileController {
   async create(
     @requestBody(UserRequestBody) profile: Profile,
   ): Promise<Profile> {
+    profile.password = await this.passwordHasher.hashPassword(profile.password);
+    console.log('password hasher', profile);
     profile.permissions = [
       PermissionKey.ViewOwnUser,
       PermissionKey.CreateUser,

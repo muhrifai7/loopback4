@@ -21,6 +21,9 @@ import {
   registerAuthenticationStrategy,
 } from '@loopback/authentication';
 
+import {PasswordHasherBindings} from './authorization';
+import {BcryptHasher} from './authorization/services/hash.password.bcryptjs';
+
 export class LoopBackApplication extends BootMixin(
   ServiceMixin(RepositoryMixin(RestApplication)),
 ) {
@@ -36,6 +39,10 @@ export class LoopBackApplication extends BootMixin(
     this.bind(MyAuthBindings.USER_PERMISSIONS).toProvider(
       UserPermissionsProvider,
     );
+    // password
+    this.bind(PasswordHasherBindings.ROUNDS).to(0);
+    this.bind(PasswordHasherBindings.PASSWORD_HASHER).toClass(BcryptHasher);
+
     // Set up the custom sequence
     this.sequence(MySequence);
 
@@ -59,6 +66,10 @@ export class LoopBackApplication extends BootMixin(
       },
     };
   }
+
+  // setUpBinding(): void {
+
+  // }
 }
 
 // LoopBackApplication
