@@ -59,7 +59,8 @@
     "@types/lodash": "^4.14.145",
     "@types/uuid": "^3.4.6",
     "bcryptjs": "^2.4.3",
-    "jsonwebtoken": "^8.5.1"
+    "jsonwebtoken": "^8.5.1",
+    "openapi-to-graphql-cli": "^1.6.2"
   },
   "devDependencies": {
     "@loopback/build": "^2.0.14",

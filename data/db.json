@@ -1,6 +1,11 @@
 {
   "ids": {
-    "Profile": 17
+    "Profile": 17,
+    "Page": 2,
+    "Sections": 4,
+    "Submenu": 2,
+    "Menu": 2,
+    "Content": 3
   },
   "models": {
     "Profile": {
@@ -8,6 +13,24 @@
       "test@example.com": "{\"email\":\"test@example.com\",\"password\":\"$2a$10$fut4H/34e0k6aUmMNHoH2u0wNe6bICqYPY9u9/JFsBWKmZFWQMfjq\",\"permissions\":[\"ViewOwnUser\",\"CreateUser\",\"UpdateOwnUser\",\"DeleteOwnUser\"],\"name\":\"string\"}",
       "use@example.com": "{\"email\":\"use@example.com\",\"password\":\"$2a$10$UJ3IMQwvH2PIYD82HG1.h.nY8FBCOw02yKajO3b7VUcX9/gpSzHbO\",\"permissions\":[\"ViewOwnUser\",\"CreateUser\",\"UpdateOwnUser\",\"DeleteOwnUser\"],\"name\":\"string\"}",
       "admin@gmail.com": "{\"email\":\"admin@gmail.com\",\"password\":\"12345678\",\"permissions\":[\"ViewOwnUser\",\"CreateUser\",\"UpdateOwnUser\",\"DeleteOwnUser\",\"UpdateAnyUser\",\"ViewAnyUser\",\"DeleteAnyUser\"],\"name\":\"admin\"}"
+    },
+    "Page": {
+      "1": "{\"name\":\"LandingPage\",\"id\":1}"
+    },
+    "Sections": {
+      "1": "{\"name\":\"string\",\"header\":\"string\",\"sub_header\":\"string\",\"id\":1}",
+      "2": "{\"pageId\":1,\"name\":\"string\",\"header\":\"string\",\"sub_header\":\"string\",\"id\":2}",
+      "3": "{\"pageId\":1,\"name\":\"sjkbdfakergbfkerg\",\"header\":\"string\",\"sub_header\":\"string\",\"id\":3}"
+    },
+    "Submenu": {
+      "1": "{\"title\":\"string\",\"link\":\"string\",\"menuId\":1,\"id\":1}"
+    },
+    "Menu": {
+      "1": "{\"name\":\"menu\",\"link\":\"/link\",\"id\":1}"
+    },
+    "Content": {
+      "1": "{\"sectionsId\":1,\"desc\":\"string\",\"image\":\"string\",\"image_title\":\"string\",\"header\":\"string\",\"sub_header\":\"string\",\"id\":1}",
+      "2": "{\"sectionsId\":3,\"desc\":\"string\",\"image\":\"string\",\"image_title\":\"string\",\"header\":\"string\",\"sub_header\":\"string\",\"id\":2}"
     }
   }
 }

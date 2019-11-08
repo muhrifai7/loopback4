@@ -37,7 +37,7 @@ import {Profile} from '../models';
 import {ProfileRepository} from '../repositories';
 import {PasswordHasherBindings, UserServiceBindings} from '../authorization';
 import {PasswordHasher} from '../authorization/services/hash.password.bcryptjs';
-import {Credentials} from '../repositories/profile.repository';
+// import {Credentials} from '../repositories/profile.repository';
 export class ProfileController {
   constructor(
     @repository(ProfileRepository)
