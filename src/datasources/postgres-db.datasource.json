@@ -1,0 +1,12 @@
+{
+  "name": "postgres_db",
+  "connector": "postgresql",
+  "url": "postgres://doadmin:yz9klvllscyom8sf@topgrowth-postgresql-do-user-3437594-0.db.ondigitalocean.com:25060/topgrowth_db?sslmode=require&ssl=true",
+  "host": "topgrowth-postgresql-do-user-3437594-0.db.ondigitalocean.com",
+  "port": 25060,
+  "user": "doadmin",
+  "password": "yz9klvllscyom8sf",
+  "debug": "true",
+  "database": "topgrowth_db",
+  "ssl": "true"
+}

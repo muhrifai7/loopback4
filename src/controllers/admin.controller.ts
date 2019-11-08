@@ -53,22 +53,30 @@ export class AdminController {
     },
   })
   async create(
-    @param.query.string('admin_code') admin_code: string,
+    @param.query.string('code') admin_code: string,
     @requestBody() profile: Profile,
   ): Promise<Profile> {
-    if (admin_code != '901029') {
+    if (admin_code == 'admin') {
+      profile.permissions = [
+        PermissionKey.ViewOwnUser,
+        PermissionKey.CreateUser,
+        PermissionKey.UpdateOwnUser,
+        PermissionKey.DeleteOwnUser,
+        PermissionKey.ViewAnyUser,
+      ];
+    } else if (admin_code == 'super_admin') {
+      profile.permissions = [
+        PermissionKey.ViewOwnUser,
+        PermissionKey.CreateUser,
+        PermissionKey.UpdateOwnUser,
+        PermissionKey.DeleteOwnUser,
+        PermissionKey.UpdateAnyUser,
+        PermissionKey.ViewAnyUser,
+        PermissionKey.DeleteAnyUser,
+      ];
+    } else {
       throw new HttpErrors.Forbidden('WRONG_ADMIN_CODE');
     }
-
-    profile.permissions = [
-      PermissionKey.ViewOwnUser,
-      PermissionKey.CreateUser,
-      PermissionKey.UpdateOwnUser,
-      PermissionKey.DeleteOwnUser,
-      PermissionKey.UpdateAnyUser,
-      PermissionKey.ViewAnyUser,
-      PermissionKey.DeleteAnyUser,
-    ];
     if (await this.profileRepository.exists(profile.email)) {
       throw new HttpErrors.BadRequest(`This email already exists`);
     } else {

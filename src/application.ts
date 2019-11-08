@@ -10,6 +10,7 @@ import {ServiceMixin} from '@loopback/service-proxy';
 import * as path from 'path';
 import {MySequence} from './sequence';
 //add
+import {PostgresDbDataSource} from './datasources';
 import {
   MyAuthBindings,
   JWTService,
@@ -29,6 +30,9 @@ export class LoopBackApplication extends BootMixin(
 ) {
   constructor(options: ApplicationConfig = {}) {
     super(options);
+
+    //ad postgres
+    // this.dataSource(new PostgresDbDataSource());
 
     //add
     // Bind authentication component related elements

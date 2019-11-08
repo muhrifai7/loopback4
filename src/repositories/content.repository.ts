@@ -9,6 +9,7 @@ export class ContentRepository extends DefaultCrudRepository<
   ContentRelations
 > {
   constructor(
+    // @inject('datasources.postgres') dataSource: PostgresDataSource,
     @inject('datasources.db') dataSource: DbDataSource,
   ) {
     super(Content, dataSource);

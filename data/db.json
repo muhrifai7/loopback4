@@ -1,6 +1,6 @@
 {
   "ids": {
-    "Profile": 17,
+    "Profile": 19,
     "Page": 2,
     "Sections": 4,
     "Submenu": 2,
@@ -12,7 +12,9 @@
       "user@example.com": "{\"email\":\"user@example.com\",\"password\":\"12345678\",\"permissions\":[\"ViewOwnUser\",\"CreateUser\",\"UpdateOwnUser\",\"DeleteOwnUser\"],\"name\":\"string\"}",
       "test@example.com": "{\"email\":\"test@example.com\",\"password\":\"$2a$10$fut4H/34e0k6aUmMNHoH2u0wNe6bICqYPY9u9/JFsBWKmZFWQMfjq\",\"permissions\":[\"ViewOwnUser\",\"CreateUser\",\"UpdateOwnUser\",\"DeleteOwnUser\"],\"name\":\"string\"}",
       "use@example.com": "{\"email\":\"use@example.com\",\"password\":\"$2a$10$UJ3IMQwvH2PIYD82HG1.h.nY8FBCOw02yKajO3b7VUcX9/gpSzHbO\",\"permissions\":[\"ViewOwnUser\",\"CreateUser\",\"UpdateOwnUser\",\"DeleteOwnUser\"],\"name\":\"string\"}",
-      "admin@gmail.com": "{\"email\":\"admin@gmail.com\",\"password\":\"12345678\",\"permissions\":[\"ViewOwnUser\",\"CreateUser\",\"UpdateOwnUser\",\"DeleteOwnUser\",\"UpdateAnyUser\",\"ViewAnyUser\",\"DeleteAnyUser\"],\"name\":\"admin\"}"
+      "admin@gmail.com": "{\"email\":\"admin@gmail.com\",\"password\":\"12345678\",\"permissions\":[\"ViewOwnUser\",\"CreateUser\",\"UpdateOwnUser\",\"DeleteOwnUser\",\"UpdateAnyUser\",\"ViewAnyUser\",\"DeleteAnyUser\"],\"name\":\"admin\"}",
+      "admin1@gmail.com": "{\"email\":\"admin1@gmail.com\",\"password\":\"12345678\",\"permissions\":[\"ViewOwnUser\",\"CreateUser\",\"UpdateOwnUser\",\"DeleteOwnUser\",\"ViewAnyUser\"],\"name\":\"adminbiasa\"}",
+      "superadmin@gmail.com": "{\"email\":\"superadmin@gmail.com\",\"password\":\"12345678\",\"permissions\":[\"ViewOwnUser\",\"CreateUser\",\"UpdateOwnUser\",\"DeleteOwnUser\",\"UpdateAnyUser\",\"ViewAnyUser\",\"DeleteAnyUser\"],\"name\":\"adminbiasa\"}"
     },
     "Page": {
       "1": "{\"name\":\"LandingPage\",\"id\":1}"

@@ -9,6 +9,7 @@ export class SubmenuRepository extends DefaultCrudRepository<
   SubmenuRelations
 > {
   constructor(
+    // @inject('datasources.postgres') dataSource: PostgresDataSource,
     @inject('datasources.db') dataSource: DbDataSource,
   ) {
     super(Submenu, dataSource);
