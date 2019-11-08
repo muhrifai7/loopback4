@@ -49,9 +49,9 @@ export class ProfileController {
     //add password
     @inject(PasswordHasherBindings.PASSWORD_HASHER)
     private passwordHasher: PasswordHasher,
-    @inject(UserServiceBindings.USER_SERVICE)
-    public userService: UserService<Profile, Credentials>,
-  ) {}
+  ) // @inject(UserServiceBindings.USER_SERVICE)
+  // public userService: UserService<Profile, Credentials>,
+  {}
 
   @post('/profile', {
     responses: {
@@ -96,8 +96,8 @@ export class ProfileController {
   async login(
     @requestBody(CredentialsRequestBody) credential: Credential,
   ): Promise<{token: string}> {
-    const user = await this.userService.verifyCredentials(credential);
-    console.log(user);
+    // const user = await this.userService.verifyCredentials(credential);
+    // console.log(user);
     const token = await this.jwtService.getToken(credential);
     return {token};
   }

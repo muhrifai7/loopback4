@@ -2,31 +2,12 @@ import {Entity, model, property} from '@loopback/repository';
 
 import {PermissionKey} from '../authorization';
 
-@model({
-  settings: {
-    indexes: {
-      uniqueEmail: {
-        keys: {
-          email: 1,
-        },
-        options: {
-          unique: true,
-        },
-      },
-    },
-  },
-})
+@model()
 export class Profile extends Entity {
-  @property({
-    type: 'number',
-    id: true,
-    generated: true,
-  })
-  id: number;
-
   @property({
     type: 'string',
     required: true,
+    id: true,
   })
   email?: string;
 
