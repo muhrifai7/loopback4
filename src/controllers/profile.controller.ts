@@ -27,13 +27,17 @@ import {
   UserProfileSchema,
   JWTService,
 } from '../authorization';
-import {authenticate, AuthenticationBindings} from '@loopback/authentication';
+import {
+  authenticate,
+  AuthenticationBindings,
+  UserService,
+} from '@loopback/authentication';
 import {HttpErrors} from '@loopback/rest';
 import {Profile} from '../models';
 import {ProfileRepository} from '../repositories';
-import {PasswordHasherBindings} from '../authorization';
+import {PasswordHasherBindings, UserServiceBindings} from '../authorization';
 import {PasswordHasher} from '../authorization/services/hash.password.bcryptjs';
-
+import {Credentials} from '../repositories/profile.repository';
 export class ProfileController {
   constructor(
     @repository(ProfileRepository)
@@ -45,6 +49,8 @@ export class ProfileController {
     //add password
     @inject(PasswordHasherBindings.PASSWORD_HASHER)
     private passwordHasher: PasswordHasher,
+    @inject(UserServiceBindings.USER_SERVICE)
+    public userService: UserService<Profile, Credentials>,
   ) {}
 
   @post('/profile', {
@@ -90,6 +96,8 @@ export class ProfileController {
   async login(
     @requestBody(CredentialsRequestBody) credential: Credential,
   ): Promise<{token: string}> {
+    const user = await this.userService.verifyCredentials(credential);
+    console.log(user);
     const token = await this.jwtService.getToken(credential);
     return {token};
   }
@@ -126,7 +134,36 @@ export class ProfileController {
     let char: Profile = await this.profileRepository.findById(
       currentUser.email,
     );
+    console.log(char);
     char.name = newName.name!;
     return await this.profileRepository.updateById(currentUser.email, char);
+  }
+
+  @get('/profiles', {
+    responses: {
+      '200': {
+        description: 'Profile model instance',
+        content: {'application/json': {schema: {'x-ts-type': Profile}}},
+      },
+    },
+  })
+  @authenticate('jwt', {required: [PermissionKey.ViewOwnUser]})
+  async findById(): Promise<Profile> {
+    const currentUser = await this.getCurrentUser();
+    return await this.profileRepository.findById(currentUser.email);
+  }
+  @del('/profile', {
+    responses: {
+      '204': {
+        description: 'Profile DELETE success',
+      },
+    },
+  })
+  @authenticate('jwt', {required: [PermissionKey.DeleteOwnUser]})
+  async deleteById(): Promise<void> {
+    const currentUser = await this.getCurrentUser();
+    console.log(currentUser);
+    await this.profileRepository.deleteById(currentUser.email);
+    // await this.profileRepository.deleteById(id);
   }
 }

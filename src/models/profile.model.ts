@@ -2,11 +2,30 @@ import {Entity, model, property} from '@loopback/repository';
 
 import {PermissionKey} from '../authorization';
 
-@model()
+@model({
+  settings: {
+    indexes: {
+      uniqueEmail: {
+        keys: {
+          email: 1,
+        },
+        options: {
+          unique: true,
+        },
+      },
+    },
+  },
+})
 export class Profile extends Entity {
   @property({
-    type: 'string',
+    type: 'number',
     id: true,
+    generated: true,
+  })
+  id: number;
+
+  @property({
+    type: 'string',
     required: true,
   })
   email?: string;
@@ -22,9 +41,8 @@ export class Profile extends Entity {
 
   @property({
     type: 'string',
-    required: true,
   })
-  name: string;
+  name?: string;
 
   constructor(data?: Partial<Profile>) {
     super(data);

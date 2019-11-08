@@ -1,7 +1,10 @@
 import {BindingKey} from '@loopback/context';
 import {UserPermissionsFn} from './types';
-import {TokenService} from '@loopback/authentication';
+import {TokenService, UserService} from '@loopback/authentication';
 import {PasswordHasher} from './services/hash.password.bcryptjs';
+import {Profile} from '../models';
+import {Credentials} from '../repositories';
+
 /**
  * Binding keys used by this component.
  */
@@ -25,4 +28,10 @@ export namespace PasswordHasherBindings {
     'services.hasher',
   );
   export const ROUNDS = BindingKey.create<number>('services.hasher.round');
+}
+
+export namespace UserServiceBindings {
+  export const USER_SERVICE = BindingKey.create<
+    UserService<Profile, Credentials>
+  >('services.user.service');
 }

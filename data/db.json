@@ -1,14 +1,16 @@
 {
   "ids": {
-    "Profile": 6
+    "Profile": 10
   },
   "models": {
     "Profile": {
+      "9": "{\"email\":\"uer@example.com\",\"password\":\"$2a$10$XZ6Hq59uxFevTRqVCjFEc.gHhlr7lVElOxnPKxirdPD6SsdiGXfk.\",\"permissions\":[\"ViewOwnUser\",\"CreateUser\",\"UpdateOwnUser\",\"DeleteOwnUser\"],\"name\":\"string\",\"id\":9}",
       "test@gmail.com": "{\"email\":\"test@gmail.com\",\"password\":\"12345678\",\"permissions\":[\"ViewOwnUser\",\"CreateUser\",\"UpdateOwnUser\",\"DeleteOwnUser\"],\"name\":\"string\"}",
       "hallo@gmail.com": "{\"email\":\"hallo@gmail.com\",\"password\":\"12345678\",\"permissions\":[\"ViewOwnUser\",\"CreateUser\",\"UpdateOwnUser\",\"DeleteOwnUser\"],\"name\":\"string\"}",
       "user@example.com": "{\"email\":\"user@example.com\",\"password\":\"12345678\",\"permissions\":[\"ViewOwnUser\",\"CreateUser\",\"UpdateOwnUser\",\"DeleteOwnUser\"],\"name\":\"string\"}",
-      "1@example.com": "{\"email\":\"1@example.com\",\"password\":\"$2a$10$jD9BQvawcfLbpKUIOpNcdeiJZbNCndnDVI3vP26EUmZTPITnPqwBu\",\"permissions\":[\"ViewOwnUser\",\"CreateUser\",\"UpdateOwnUser\",\"DeleteOwnUser\"],\"name\":\"string\"}",
-      "test@example.com": "{\"email\":\"test@example.com\",\"password\":\"$2a$10$fut4H/34e0k6aUmMNHoH2u0wNe6bICqYPY9u9/JFsBWKmZFWQMfjq\",\"permissions\":[\"ViewOwnUser\",\"CreateUser\",\"UpdateOwnUser\",\"DeleteOwnUser\"],\"name\":\"string\"}"
+      "1@example.com": "{\"email\":\"1@example.com\",\"password\":\"12345678\",\"permissions\":[\"ViewOwnUser\",\"CreateUser\",\"UpdateOwnUser\",\"DeleteOwnUser\"],\"name\":\"string\"}",
+      "test@example.com": "{\"email\":\"test@example.com\",\"password\":\"$2a$10$fut4H/34e0k6aUmMNHoH2u0wNe6bICqYPY9u9/JFsBWKmZFWQMfjq\",\"permissions\":[\"ViewOwnUser\",\"CreateUser\",\"UpdateOwnUser\",\"DeleteOwnUser\"],\"name\":\"string\"}",
+      "use@example.com": "{\"email\":\"use@example.com\",\"password\":\"$2a$10$UJ3IMQwvH2PIYD82HG1.h.nY8FBCOw02yKajO3b7VUcX9/gpSzHbO\",\"permissions\":[\"ViewOwnUser\",\"CreateUser\",\"UpdateOwnUser\",\"DeleteOwnUser\"],\"name\":\"string\"}"
     }
   }
 }
